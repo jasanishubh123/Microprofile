@@ -1,0 +1,11 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "payara-server-build",
+			"type": "shell",
+			"command": "mvn resources:resources compiler:compile war:exploded",
+			"group": "build"
+		}
+	]
+}

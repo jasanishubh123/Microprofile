@@ -1,0 +1,23 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "payara-server-build",
+			"type": "shell",
+			"command": "mvn resources:resources compiler:compile war:exploded",
+			"group": "build"
+		},
+		{
+			"label": "payara-micro-exploded-war-start",
+			"type": "shell",
+			"command": "mvn resources:resources compiler:compile war:exploded -Dexploded=true -DdeployWar=true fish.payara.maven.plugins:payara-micro-maven-plugin:start",
+			"group": "build"
+		},
+		{
+			"label": "payara-micro-bundle",
+			"type": "shell",
+			"command": "mvn install fish.payara.maven.plugins:payara-micro-maven-plugin:bundle",
+			"group": "build"
+		}
+	]
+}

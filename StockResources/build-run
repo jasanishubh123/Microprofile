@@ -1,0 +1,3 @@
+#!/bin/sh
+mvn clean package && docker build -t jasanishubh123/StockResources .
+docker rm -f StockResources 2>/dev/null || true && docker run -it --name StockResources -p 8080:8080 -p 4848:4848 -p 8181:8181 --name StockResources jasanishubh123/StockResources

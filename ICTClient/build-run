@@ -1,0 +1,3 @@
+#!/bin/sh
+mvn clean package && docker build -t jasanishubh123/ICTClient .
+docker rm -f ICTClient 2>/dev/null || true && docker run -it --name ICTClient -p 8080:8080 -p 4848:4848 -p 8181:8181 --name ICTClient jasanishubh123/ICTClient

@@ -1,0 +1,74 @@
+Step 1 : Set Database 
+
+Step 2 : Set Connection Pool In Payara Admin Console
+
+Step 3: Create StockResourcesApp
+
+	step 3.1 : Add Depedency of jakartaee (if already then not)
+	
+	step 3.2 : Add Persistance.xml in OtherResources -> META-INF (create folder) -> persistance.xml
+	
+	step 3.3 : Add PublicKey and payara-mp-jwt.properties file
+
+	step 3.4 : create Entity Class from Database
+
+		step 3.4.1: remove @XmlRoolElement and @XmlTransient and changes to @JsonbTransient
+	
+	step 3.5 : create Model class 
+
+	step 3.6 : create StockResources (Rest class)
+
+	step 3.7 : Bootstarp.java @LoginConfig and @DeclareRoles add annotation
+
+	
+
+Step 4 : Create ProductResourcesApp
+
+	step 4.1 : Add Depedency of jakartaee (if already then not)
+	
+	step 4.2 : Add Persistance.xml in OtherResources -> META-INF (create folder) -> persistance.xml
+	
+	step 4.3 : Add PublicKey and payara-mp-jwt.properties file 
+
+	step 4.4 : create Entity Class from Database
+
+		step 4.4.1: remove @XmlRoolElement and @XmlTransient and changes to @JsonbTransient
+	
+	step 4.5 : create Model class 
+
+	step 4.6 : create RowToken Class
+
+	step 4.7 : create StockClient
+
+	step 4.6 : create ProductResources (Rest class)
+
+	step 4.7 : Bootstarp.java @LoginConfig and @DeclareRoles add annotation
+
+
+Step 5 : Create ShopClientApp
+
+	step 5.1 : Add Depedency of jwt and jakartaee (if already then not)
+
+	step 5.2 : Add PrivateKey in OtherResources
+
+	step 5.3 : create Project Package  and in that package Create two class one is MyCredentials and second is DatabaseIdentityStoreHandler Class
+
+	step 5.4 : put Token package in SourcePackages from sir
+
+	step 5.5 : Add HttpAuthenticationMechanism Class
+
+	step 5.6 : create Product Client
+
+	step 5.7 : create Model class for Product for getter and setter properties
+
+	step 5.8 : create Servlet UI Copy from sir	
+	
+
+
+
+
+	
+	
+
+
+
