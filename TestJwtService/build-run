@@ -1,0 +1,3 @@
+#!/bin/sh
+mvn clean package && docker build -t jasanishubh123/TestJwtService .
+docker rm -f TestJwtService 2>/dev/null || true && docker run -it --name TestJwtService -p 8080:8080 -p 4848:4848 -p 8181:8181 --name TestJwtService jasanishubh123/TestJwtService

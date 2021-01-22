@@ -24,7 +24,7 @@ import token.GenerateToken;
  */
 
 
-@RegisterRestClient(baseUri =  "http://localhost:8080/ProductResources/rest")
+@RegisterRestClient(baseUri =  "http://localhost:8080/ProductResourcesJWT/rest")
 @ApplicationScoped
 @Path("/product")
 public interface ProductClient {

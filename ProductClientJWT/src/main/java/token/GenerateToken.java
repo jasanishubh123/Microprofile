@@ -43,6 +43,8 @@ private static String key;
           subject = MyCredentials.getSubject();
           groups = MyCredentials.getGroups();
           
+          System.err.println("MY GROUPS "+groups);
+          
         JWTAuth provider = JWTAuth.create(null, new JWTAuthOptions()
                 .addPubSecKey(new PubSecKeyOptions()
                         .setAlgorithm("RS256")

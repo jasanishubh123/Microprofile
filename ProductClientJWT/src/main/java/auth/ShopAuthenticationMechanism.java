@@ -3,6 +3,7 @@ package auth;
 
 
 
+import com.mycompany.productclientjwt.managedBean.loginBean;
 import com.mycompany.shopclient.project.MyCredentials;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -49,6 +50,7 @@ public class ShopAuthenticationMechanism implements HttpAuthenticationMechanism,
    private IdentityStoreHandler identityStoreHandler;
     @Inject private MyCredentials mycredentials;
    AuthenticationStatus status;
+   @Inject loginBean lb;
 
     @Override
     public AuthenticationStatus validateRequest(HttpServletRequest request, HttpServletResponse response, HttpMessageContext context) {
@@ -58,10 +60,10 @@ public class ShopAuthenticationMechanism implements HttpAuthenticationMechanism,
 
        
         
-        if (request.getParameter("username")!=null) {
+        if (lb.getUsername()!=null) {
             
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
+            String username = lb.getUsername();
+            String password = lb.getPassword();
         //    Credential credential = context.getAuthParameters().getCredential();
            Credential credential = new UsernamePasswordCredential(username,new Password(password));
         
@@ -75,6 +77,7 @@ public class ShopAuthenticationMechanism implements HttpAuthenticationMechanism,
                mycredentials.setLoginStatus("Login_Success");
                mycredentials.setStausMessage("Hello " + result.getCallerGroups().toString()+" Login Success !!");
                
+                System.out.println(result.getCallerGroups());
                
                request.getSession().setAttribute("uname", username);
                request.getSession().setAttribute("groups", convertSetToList(result.getCallerGroups()));

@@ -62,9 +62,11 @@ public class ProductModel {
         try {
              em.getTransaction().begin();
              
-             if(p.getProductid()>0 ||p.getProductid()!=0){
+             System.out.println(p.getProductid());
+             if(p.getProductid() != null){
                  em.merge(p);
              }else{
+                 System.out.println("in Persist");
                  em.persist(p);
              }
              

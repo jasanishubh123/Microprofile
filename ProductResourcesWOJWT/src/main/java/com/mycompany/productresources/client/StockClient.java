@@ -21,7 +21,7 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
  */
 
 
-@RegisterRestClient(baseUri = "http://localhost:8080/StockResourcesWOJWT/rest")
+@RegisterRestClient(baseUri = "http://localhost:8085/StockResourcesWOJWT/rest")
 @Path("/stock")
 public interface StockClient {
     

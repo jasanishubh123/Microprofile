@@ -23,6 +23,7 @@ import javax.inject.Inject;
 @SessionScoped
 public class productBean implements  Serializable{
 
+    
     Product p;
     @Inject ProductClient pc;
     Collection<Product> colp;
@@ -33,6 +34,8 @@ public class productBean implements  Serializable{
         p= new Product();
     }
 
+    
+    
     public Product getP() {
         return p;
     }
@@ -45,6 +48,7 @@ public class productBean implements  Serializable{
     public String addProduct(){
         System.out.println(p.getProductname()+" "+p.getDescription()+" "+p.getPrice());
         pc.addProduct(p);
+        p = new Product();
         return "displayProduct.jsf?faces-redirect=true";
     }
 

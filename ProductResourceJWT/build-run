@@ -1,0 +1,3 @@
+#!/bin/sh
+mvn clean package && docker build -t jasanishubh123/ProductResourceJWT .
+docker rm -f ProductResourceJWT 2>/dev/null || true && docker run -it --name ProductResourceJWT -p 8080:8080 -p 4848:4848 -p 8181:8181 --name ProductResourceJWT jasanishubh123/ProductResourceJWT
